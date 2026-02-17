@@ -1,0 +1,222 @@
+.product-showcase {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #fff;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+/* LEFT PANEL: ICON GRID */
+.showcase-left {
+    flex: 0 0 45%;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 10px;
+    height: 100%;
+    align-content: space-between;
+}
+
+.icon-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon-wrapper {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon-label {
+    color: #01419e;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.grid-separator {
+    grid-column: 1 / -1;
+    background-color: #f8f9fa;
+    color: #555;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: left;
+    margin: 10px 0;
+    font-weight: 300;
+    position: relative;
+}
+
+.grid-separator::after {
+    content: 'ⓘ';
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+/* RIGHT PANEL: CAROUSEL */
+.showcase-right {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #0e1b4d 0%, #003b90 100%);
+    color: #fff;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-left: -5%;
+    /* Overlap for diagonal effect */
+}
+
+.carousel-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-slides::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+    /* Spacing for diagonal */
+    position: relative;
+}
+
+.carousel-slide-content {
+    padding-right: 40px;
+    flex: 1;
+}
+
+.carousel-slide-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.carousel-slide-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.carousel-slide-content .button-container {
+    margin: 0;
+}
+
+.carousel-slide-content .button {
+    background-color: #fff;
+    color: #003b90;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.carousel-slide-image {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide-image img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* INDICATORS */
+.carousel-slide-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 15%;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.carousel-slide-indicator button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.carousel-slide-indicator button[disabled] {
+    background-color: #fff;
+    cursor: default;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .product-showcase {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .showcase-left {
+        flex: auto;
+        padding-bottom: 40px;
+    }
+
+    .showcase-right {
+        clip-path: none;
+        margin-left: 0;
+        padding: 40px 20px;
+    }
+
+    .carousel-slide {
+        padding-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carousel-slide-content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .carousel-slide-indicators {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
