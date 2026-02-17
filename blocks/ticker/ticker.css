@@ -1,0 +1,158 @@
+.ticker {
+    background-color: #003b90;
+    /* HDFC Blue */
+    color: #ffffff;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: var(--body-font-family);
+}
+
+.ticker-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.ticker-center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 600px;
+}
+
+.ticker-market-data {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.ticker-item .ticker-value {
+    font-weight: 600;
+}
+
+.ticker-item .ticker-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 4px;
+}
+
+.ticker-item .ticker-change.up {
+    color: #39e6a3;
+    /* Green for up */
+}
+
+.ticker-item .ticker-change.up::before {
+    content: '▲';
+    font-size: 10px;
+}
+
+.ticker-item .ticker-change.down {
+    color: #ff5e5e;
+    /* Red for down */
+}
+
+.ticker-item .ticker-change.down::before {
+    content: '▼';
+    font-size: 10px;
+}
+
+.ticker-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #8da6c3;
+    color: #ffffff;
+    padding: 4px 30px 4px 0;
+    font-size: 15px;
+    outline: none;
+}
+
+.ticker-search input::placeholder {
+    color: #8da6c3;
+}
+
+.ticker-search .icon-search {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    /* Make search icon white if it's an image */
+}
+
+/* Custom magnifying glass if icon not available */
+.ticker-search .icon-search::after {
+    content: '🔍';
+    font-size: 14px;
+}
+
+.ticker-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.ticker-buttons .button {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    border: none;
+    position: relative;
+}
+
+.ticker-buttons .button.primary {
+    background-color: #fe1300;
+    /* Red */
+    color: white;
+}
+
+.ticker-buttons .button.secondary {
+    background-color: #82b5ff;
+    /* Light Blue */
+    color: #003b90;
+}
+
+.ticker-buttons .badge-new {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #fe1300;
+    color: white;
+    font-size: 8px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ticker {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .ticker-center-content {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ticker-market-data {
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+}
