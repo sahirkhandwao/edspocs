@@ -28,6 +28,16 @@ export default function decorate(block) {
                 const li = document.createElement('li');
                 li.className = 'subnav-item';
 
+                // Add Menu Icon based on title
+                const icon = document.createElement('span');
+                const lowerTitle = title.toLowerCase();
+                if (lowerTitle.includes('market')) icon.className = 'subnav-menu-icon icon-markets';
+                else if (lowerTitle.includes('research')) icon.className = 'subnav-menu-icon icon-research';
+                else if (lowerTitle.includes('product')) icon.className = 'subnav-menu-icon icon-products';
+                else if (lowerTitle.includes('finance') || lowerTitle.includes('portfolio')) icon.className = 'subnav-menu-icon icon-portfolio';
+
+                if (icon.className) li.append(icon);
+
                 const span = document.createElement('span');
                 span.className = 'subnav-item-title';
                 span.textContent = title;

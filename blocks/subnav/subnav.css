@@ -143,6 +143,31 @@
     color: #000000;
 }
 
+.subnav-menu-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    font-size: 20px;
+    color: #003b90;
+}
+
+.icon-markets::before {
+    content: '📉';
+}
+
+.icon-research::before {
+    content: '🔍';
+}
+
+.icon-products::before {
+    content: '📦';
+}
+
+.icon-portfolio::before {
+    content: '📊';
+}
+
 /* UTILITY ICONS */
 .subnav-utility {
     display: flex;
