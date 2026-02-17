@@ -54,9 +54,69 @@ export default function decorate(block) {
 
     const searchIcon = document.createElement('span');
     searchIcon.className = 'icon icon-search';
-    // AEM EDS standard icon decoration might be needed here, but we'll use a placeholder/CSS for now
 
-    searchWrapper.append(searchInput, searchIcon);
+    // Dropdown Container
+    const dropdown = document.createElement('div');
+    dropdown.className = 'ticker-search-dropdown';
+    dropdown.style.display = 'none';
+
+    searchWrapper.append(searchInput, searchIcon, dropdown);
+
+    // Mock Data
+    const trendings = ['Pick of the week', 'Portfolios', 'Mobile App', 'Research Reports'];
+    const stocks = [
+        { name: 'HDFC Bank', price: '1,642.50', change: '+12.40 (0.76%)', up: true },
+        { name: 'HDFC Life', price: '715.20', change: '-5.15 (0.72%)', up: false },
+        { name: 'HDFC AMC', price: '4,120.00', change: '+45.00 (1.10%)', up: true },
+    ];
+
+    const showTrendings = () => {
+        dropdown.innerHTML = '<h2 class="search-heading">Trendings</h2>';
+        trendings.forEach((item) => {
+            const div = document.createElement('div');
+            div.className = 'search-item trending';
+            div.textContent = item;
+            dropdown.append(div);
+        });
+        dropdown.style.display = 'block';
+    };
+
+    const showResults = (query) => {
+        dropdown.innerHTML = '<h2 class="search-heading">Equity</h2>';
+        const filtered = stocks.filter((s) => s.name.toLowerCase().includes(query.toLowerCase()));
+        if (filtered.length > 0) {
+            filtered.forEach((s) => {
+                const div = document.createElement('div');
+                div.className = 'search-item result';
+                div.innerHTML = `
+                    <span class="comp-name">${s.name}</span>
+                    <span class="comp-price"><b>${s.price}</b></span>
+                    <span class="comp-change ${s.up ? 'up' : 'down'}">${s.change}</span>
+                `;
+                dropdown.append(div);
+            });
+        } else {
+            dropdown.innerHTML += '<div class="search-item no-result">No results found</div>';
+        }
+        dropdown.style.display = 'block';
+    };
+
+    searchInput.addEventListener('focus', () => {
+        if (!searchInput.value) showTrendings();
+        else showResults(searchInput.value);
+    });
+
+    searchInput.addEventListener('input', () => {
+        if (!searchInput.value) showTrendings();
+        else showResults(searchInput.value);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchWrapper.contains(e.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+
     if (searchRow) searchRow.remove();
 
     centerContent.append(tickerWrapper, searchWrapper);

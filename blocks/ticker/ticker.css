@@ -84,7 +84,13 @@
     padding: 4px 30px 4px 0;
     font-size: 15px;
     outline: none;
+    padding: 10px;
 }
+
+.ticker-search input:focus {
+    background-color: #fff;
+}
+
 
 .ticker-search input::placeholder {
     color: #8da6c3;
@@ -102,6 +108,75 @@
 .ticker-search .icon-search::after {
     content: '🔍';
     font-size: 14px;
+}
+
+.ticker-search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #003b90;
+    border-top: none;
+    z-index: 10;
+    max-height: 400px;
+    overflow-y: auto;
+    color: #131313;
+    padding-bottom: 8px;
+}
+
+.ticker-search .search-heading {
+    color: #ee7a26;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    margin: 0;
+    text-transform: none;
+}
+
+.ticker-search .search-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #d7dade;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticker-search .search-item:last-child {
+    border-bottom: none;
+}
+
+.ticker-search .search-item:hover {
+    background-color: #dfe4f1;
+}
+
+.ticker-search .search-item .comp-name {
+    flex: 1;
+}
+
+.ticker-search .search-item .comp-price {
+    color: #003b90;
+    margin: 0 10px;
+}
+
+.ticker-search .search-item .comp-change.up {
+    color: #218d13;
+}
+
+.ticker-search .search-item .comp-change.down {
+    color: #d9534f;
+}
+
+.ticker-search .search-item.no-result {
+    color: #505050;
+    font-style: italic;
+    cursor: default;
+}
+
+.ticker-search .search-item.no-result:hover {
+    background-color: transparent;
 }
 
 .ticker-buttons {
