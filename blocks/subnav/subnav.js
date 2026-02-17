@@ -17,7 +17,14 @@ export default function decorate(block) {
             navList.className = 'subnav-list';
 
             items.forEach((item) => {
-                const title = item.firstChild.textContent.trim();
+                // Better title extraction: get text before the first UL
+                const titleEl = item.querySelector(':scope > p') || item;
+                const title = [...titleEl.childNodes]
+                    .filter((node) => node.nodeType === Node.TEXT_NODE || (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'UL'))
+                    .map((node) => node.textContent)
+                    .join(' ')
+                    .trim();
+
                 const li = document.createElement('li');
                 li.className = 'subnav-item';
 
@@ -43,7 +50,14 @@ export default function decorate(block) {
                         colDiv.className = 'mega-column';
 
                         // Column Heading
-                        const heading = col.firstChild.textContent.trim();
+                        // Column Heading - Robust extraction
+                        const headingEl = col.querySelector(':scope > p') || col;
+                        const heading = [...headingEl.childNodes]
+                            .filter((node) => node.nodeType === Node.TEXT_NODE || (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'UL'))
+                            .map((node) => node.textContent)
+                            .join(' ')
+                            .trim();
+
                         const h3 = document.createElement('h3');
                         h3.textContent = heading;
                         colDiv.append(h3);
