@@ -1,17 +1,21 @@
 .subnav {
-    background-color: #f8f8f8;
-    /* Audited: Light gray background */
+
     height: 50px;
-    /* Audited height */
     font-family: var(--body-font-family);
-    /* position: relative; */
-    border-bottom: 1px solid #e7e7e7;
     display: flex;
-    /* Audited bottom border */
+    align-items: center;
+    width: 100%;
+}
+
+.subnav>.subnav-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .section.subnav-container {
     position: relative;
+    background-color: #ebeff5;
 }
 
 .subnav-wrapper {
@@ -68,10 +72,6 @@
     text-transform: uppercase;
 }
 
-.subnav-item:hover {
-    background-color: #e7e7e7;
-    /* Audited hover background */
-}
 
 .subnav-item:hover .subnav-item-title {
     color: #000000;
@@ -150,6 +150,7 @@
     margin-right: 8px;
     font-size: 20px;
     color: #003b90;
+    margin-top: -10px;
 }
 
 .icon-markets::before {
@@ -164,8 +165,12 @@
     content: '📦';
 }
 
-.icon-portfolio::before {
-    content: '📊';
+.icon-distribution::before {
+    content: '📢';
+}
+
+.icon-finance::before {
+    content: '👜';
 }
 
 /* UTILITY ICONS */
@@ -185,46 +190,33 @@
     cursor: pointer;
 }
 
-.utility-icon-wrapper .icon {
-    font-size: 25px;
-    color: #003b90;
+.utility-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
-/* Custom magnifying glass placeholder in header.css was icon-search. 
-   We'll use similar emoji/icon logic for subnav until SVGs are provided. */
-.icon-whatsapp::after {
-    content: '💬';
-    font-size: 20px;
-}
-
-.icon-mobile::after {
-    content: '📱';
-    font-size: 20px;
-}
-
-.icon-bell::after {
-    content: '🔔';
-    font-size: 20px;
-}
-
-.icon-customer-care::after {
-    content: '🎧';
-    font-size: 20px;
+.utility-icon-wrapper:hover {
+    opacity: 0.8;
 }
 
 .utility-badge {
     position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: #eb3315;
+    top: -5px;
+    right: -8px;
+    background-color: #eb3321;
+    /* Audited Red */
     color: #ffffff;
-    font-size: 7px;
+    font-size: 9px;
     font-weight: 700;
-    padding: 2px 5px;
+    padding: 1px 4px;
     border-radius: 10px;
     min-width: 14px;
     text-align: center;
+    line-height: 1;
+    z-index: 5;
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {

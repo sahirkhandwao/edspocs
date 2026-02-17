@@ -6,13 +6,15 @@ The Subnav block creates a secondary navigation bar with mega-menus and utility 
 
 | subnav |
 | --- |
-| **Menu Links** (Nested List) | **Utility Icons** (Link List) |
+| **Main Navigation** (Nested List) |
+| **Utility Icons** (Bulleted List) |
 
 ### Example
 
 | subnav |
 | --- |
-| <ul><li>MARKETS<ul><li>#goDIGITAL<ul><li>Mobile App</li><li>InvestRight Web (NEW)</li><li>Basket Investing</li><li>Voice Enabled Investing</li><li>HDFC money / Digify (NEW)</li></ul></li><li>EQUITY<ul><li>Overview</li><li>Basket Investing</li><li>BSPL (Buy Stocks Pay Later)</li><li>Trade Smart</li><li>Stock SIP</li><li>Set Alerts</li><li>ETF</li><li>Gold ETF</li><li>IPO, OFS & Buyback</li></ul></li><li>DERIVATIVES<ul><li>NxtOption</li><li>InstaOptions</li><li>API</li><li>Derivative Privilege</li><li>Scripts for Margin Pledge</li><li>Overview</li><li>Equity Derivatives</li><li>Currency Derivatives</li><li>Commodity Derivatives</li></ul></li><li>OTHER SERVICES<ul><li>eDIS</li><li>Peak Margin</li><li>Margin Pledge Process</li><li>Margin in Cash Segment (NEW)</li><li>POSP T&C</li><li>NRI - Open an Account</li><li>Training Courses</li><li>POA pick-up (NEW)</li></ul></li><li>INVESTMENT ADVISORY<ul><li>Investment Charter</li><li>On-boarding form</li></ul></li></ul></li><li>RESEARCH</li></ul> | <ul><li>WhatsApp (NEW)</li><li>Mobile</li><li>Bell (3)</li></ul> |
+| <ul><li>MARKETS<ul><li>#goDIGITAL<ul><li>Mobile App</li><li>InvestRight Web (NEW)</li><li>Basket Investing</li><li>Voice Enabled Investing</li><li>HDFC money / Digify (NEW)</li></ul></li><li>EQUITY<ul><li>Overview</li><li>Basket Investing</li><li>BSPL (Buy Stocks Pay Later)</li><li>Trade Smart</li><li>Stock SIP</li><li>Set Alerts</li><li>ETF</li><li>Gold ETF</li><li>IPO, OFS & Buyback</li></ul></li><li>DERIVATIVES<ul><li>NxtOption</li><li>InstaOptions</li><li>API</li><li>Derivative Privilege</li><li>Scripts for Margin Pledge</li><li>Overview</li><li>Equity Derivatives</li><li>Currency Derivatives</li><li>Commodity Derivatives</li></ul></li><li>OTHER SERVICES<ul><li>eDIS</li><li>Peak Margin</li><li>Margin Pledge Process</li><li>Margin in Cash Segment (NEW)</li><li>POSP T&C</li><li>NRI - Open an Account</li><li>Training Courses</li><li>POA pick-up (NEW)</li></ul></li><li>INVESTMENT ADVISORY<ul><li>Investment Charter</li><li>On-boarding form</li></ul></li></ul></li><li>RESEARCH</li><li>PRODUCTS</li><li>DISTRIBUTION PRODUCTS</li><li>PERSONAL FINANCE</li></ul> |
+| <ul><li>Customer Care</li><li>Mobile App</li><li>WhatsApp (NEW)</li><li>Notifications (0)</li></ul> |
 
 ## Setup Instructions
 
