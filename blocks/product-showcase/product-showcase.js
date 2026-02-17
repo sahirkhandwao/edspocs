@@ -71,10 +71,10 @@ function createSlide(row, slideIndex) {
     slide.dataset.slideIndex = slideIndex;
     slide.classList.add('carousel-slide');
 
-    row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
-        column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
-        slide.append(column);
-    });
+    const img = row.querySelector('img');
+    if (img) {
+        slide.append(img.cloneNode(true));
+    }
 
     return slide;
 }
