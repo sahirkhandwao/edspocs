@@ -1,0 +1,9 @@
+# Infobox Test
+
+| Infobox |
+| --- |
+| Help | | <h2>Do you want to invest in stocks?</h2><p>Our help section is here to guide you through your investment journey.</p> |
+| Why us | | <div class="stat-section"><h2>Number Speaks for Themselves</h2><p>HDFC Securities is one of the leading stock broking companies in India.</p></div> |
+| Contact us | | <div class="contact-grid"><div class="contact-card"><div class="contact-icon-circle">📍</div><h4>LOCATE US</h4><p><a href="#">Click here</a> to locate our branch address</p></div><div class="contact-card"><div class="contact-icon-circle">🤝</div><h4>CUSTOMER CARE</h4><p>022-6246 5555</p><p>For any service-related complaints or grievances, please contact the number listed above.</p><p>Timings: 9.00 AM to 5.00 PM (Monday to Friday) & 9.00 AM - 2.00 PM (Saturdays).</p></div><div class="contact-card"><div class="contact-icon-circle">🎧</div><h4>CENTRALIZED DEALING DESK</h4><p>022-6246 5555</p><p>For placing your investment order through Centralized Dealing Desk, please contact the number listed above.</p><p>Timings: 8.30 a.m. to 5:30 p.m (Monday to Friday) & 9.00 AM - 2.00 PM (Saturdays).</p><p><b>Note:</b> Get trading assistance from a trained tele-broking executive at NO extra cost to you.</p></div></div> |
+| Stock | | <div class="alphabet-filter"><button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button><button>N</button><button>O</button><button>P</button><button>Q</button><button>R</button><button>S</button><button>T</button><button>U</button><button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button></div> |
+| Mutual Funds | | <div class="alphabet-filter"><button>A</button><button>B</button><button>C</button>...<button>Z</button></div> |

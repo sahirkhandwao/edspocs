@@ -1,0 +1,223 @@
+.infobox-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    font-family: var(--body-font-family);
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.infobox-tabs-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.infobox-tab {
+    flex: 1;
+    background-color: #DAEDFF;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    min-height: 55px;
+    border-radius: 4px;
+    overflow: hidden;
+    /* Prevent large icons from leaking out */
+}
+
+.infobox-tab:hover {
+    background-color: #c9e3fd;
+}
+
+.infobox-tab.active {
+    background-color: #DAEDFF;
+    box-shadow: inset 0 -3px 0 #003B90;
+}
+
+.infobox-tab-label {
+    color: #003B90;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: none;
+}
+
+.infobox-tab-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #003B90;
+}
+
+.infobox-tab-icon svg {
+    display: block;
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.infobox-tab-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #003B90;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+}
+
+.infobox-tab-indicator svg {
+    width: 100%;
+    height: 100%;
+}
+
+.infobox-tab.active .infobox-tab-indicator,
+.infobox-tab:hover .infobox-tab-indicator {
+    /* Keep it downward as per design */
+    transform: none;
+}
+
+.infobox-content-area {
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    min-height: 250px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact Us Grid Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.contact-card {
+    border: 1px solid #eee;
+    padding: 50px 20px 30px;
+    text-align: center;
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.contact-icon-circle {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #003B90;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #003B90;
+    font-size: 24px;
+}
+
+.contact-card h4 {
+    color: #003B90;
+    font-size: 18px;
+    margin: 10px 0 15px;
+    font-weight: 400;
+}
+
+.contact-card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.contact-card a {
+    color: #003B90;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+/* Alphabet Filter */
+.alphabet-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.alphabet-filter button {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #003B90;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.alphabet-filter button:hover {
+    background: #003B90;
+    color: #fff;
+    border-color: #003B90;
+}
+
+/* Fix for large background icons or ghost elements seen in screenshot */
+.infobox-tab * {
+    max-width: 100%;
+}
+
+.infobox-tab img {
+    width: 24px !important;
+    height: 24px !important;
+    object-fit: contain;
+}
+
+.infobox-tab::before,
+.infobox-tab::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .infobox-tabs-row {
+        flex-direction: column;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    .infobox-tab-indicator {
+        position: absolute;
+        right: 15px;
+    }
+}
