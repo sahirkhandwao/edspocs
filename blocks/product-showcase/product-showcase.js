@@ -16,6 +16,7 @@ function updateActiveSlide(slide) {
                 link.removeAttribute('tabindex');
             }
         });
+
     });
 
     const indicators = block.querySelectorAll('.carousel-slide-indicator');
