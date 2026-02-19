@@ -86,7 +86,7 @@ export default async function decorate(block) {
   if (contactEntry) {
     const wrapper = document.createElement('div');
     wrapper.className = 'footer-contact-wrapper';
-    wrapper.innerHTML = `<div class="footer-headset-icon">${ICONS.headset}</div>`;
+    // wrapper.innerHTML = `<div class="footer-headset-icon">${ICONS.headset}</div>`;
 
     const txtDiv = document.createElement('div');
     txtDiv.className = 'footer-contact-text';
