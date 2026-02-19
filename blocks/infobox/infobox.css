@@ -85,6 +85,7 @@
 }
 
 .infobox-content-area {
+    display: none;
     background-color: #fff;
     padding: 40px;
     border: 1px solid #eee;
@@ -92,6 +93,10 @@
     min-height: 250px;
     margin-top: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.infobox-content-area.active {
+    display: block;
 }
 
 /* Contact Us Grid Styles */
@@ -108,6 +113,7 @@
     position: relative;
     background: #fff;
     border-radius: 8px;
+    margin-bottom: 4rem;
 }
 
 .contact-icon-circle {

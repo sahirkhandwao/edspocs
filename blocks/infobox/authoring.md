@@ -48,5 +48,6 @@ To create the card layout seen in the design, use the following HTML structure i
     *   Row 1: Help, Why us, Contact us.
     *   Row 2: Stock, Mutual Funds.
 2.  **Icons**: Paste the SVG code or an `<img>` tag into the Icon column.
-3.  **Active State**: The first tab (Help) is active by default.
-4.  **Content**: You can use standard HTML or Markdown for the content. For complex layouts like the Contact Us cards, use the suggested structure above.
+3. **Collapsible State**: The block is **collapsed by default**. No tab is active initially.
+4.  **Toggling**: Clicking a tab expands its content. Clicking the active tab again collapses it back to the initial state.
+5.  **Content**: You can use standard HTML or Markdown for the content. For complex layouts like the Contact Us cards, use the suggested structure above.

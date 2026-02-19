@@ -61,22 +61,27 @@ export default function decorate(block) {
     const contentArea = document.createElement('div');
     contentArea.className = 'infobox-content-area';
 
+    let currentId = null;
     const renderContent = (id) => {
+        if (id === currentId) {
+            id = null; // Toggle off if clicking the same tab
+        }
+        currentId = id;
+
         const cat = categories.find(c => c.id === id);
         if (cat) {
-            // Use a temporary element to unescape if needed, but innerHTML should be enough
-            // if the source is already HTML.
             contentArea.innerHTML = cat.content;
+            contentArea.classList.add('active');
 
             // If the content is escaped (e.g. starting with &lt;), unescape it
             if (contentArea.textContent.trim().startsWith('<')) {
-                // Content was likely escaped HTML
                 const temp = document.createElement('div');
                 temp.innerHTML = contentArea.textContent;
                 contentArea.innerHTML = temp.innerHTML;
             }
         } else {
             contentArea.innerHTML = '';
+            contentArea.classList.remove('active');
         }
 
         // Update active states
@@ -86,20 +91,13 @@ export default function decorate(block) {
     };
 
     if (categoriesTop.length) {
-        container.append(createTabRow(categoriesTop, categoriesTop[0].id, renderContent));
+        container.append(createTabRow(categoriesTop, null, renderContent));
     }
     if (categoriesBottom.length) {
         container.append(createTabRow(categoriesBottom, null, renderContent));
     }
 
     container.append(contentArea);
-
-    // Initial content
-    if (categoriesTop.length) {
-        renderContent(categoriesTop[0].id);
-    } else if (categories.length) {
-        renderContent(categories[0].id);
-    }
 
     block.innerHTML = '';
     block.append(container);
